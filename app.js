@@ -1,6 +1,6 @@
 const express = require('express')
 const app = express()
-const port = 3000
+const port = normalizePort(process.env.PORT || '3000');
 const getFake = require('./controllers/fake.controller');
 app.get('/', getFake)
 
