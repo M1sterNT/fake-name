@@ -1,6 +1,6 @@
 {
   "name": "fake-thai",
-    "scripts": {
+  "scripts": {
     "start": "node app.js"
   },
   "version": "1.0.0",
@@ -8,8 +8,10 @@
   "license": "MIT",
   "dependencies": {
     "axios": "^0.18.0",
+    "axios-cookiejar-support": "^0.4.2",
     "express": "^4.16.4",
     "jsdom": "^13.1.0",
+    "tough-cookie": "^2.5.0",
     "unirest": "^0.5.1"
   }
 }

@@ -5,6 +5,7 @@ const axios = require('axios');
 
 const getFake = async function (req, res) {
     let data = await getData();
+  
     res.status(200).json(data);
 }
 
@@ -17,10 +18,19 @@ async function getData() {
     let parameter ={
         firstName:name[0],
         lastName:name[1],
-        password:password
+        password:password,
+        email: await getEmail()
     } 
-   
   //  console.log(dom.window.document.getElementsByClassName('dl-horizontal')[9].querySelector("dd").textContent);
     return parameter
+}
+async function getEmail() {
+    let instance = axios.create({ baseURL: 'https://generator.email' });
+    let result = await instance.get('/index.php');
+    const dom = new JSDOM(result.data);
+    let userName  = dom.window.document.getElementById("userName").value
+    let domainName = dom.window.document.getElementById("domainName2").value
+    let email = userName + "@"+ domainName
+   return email
 }
 module.exports = getFake;
