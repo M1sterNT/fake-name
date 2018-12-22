@@ -1,4 +1,7 @@
 const Fakerator = require("fakerator");
+const jsdom = require("jsdom");
+const { JSDOM } = jsdom;
+const axios = require('axios');
 
 const getFake = function (req, res) {
     let data = await getData();
