@@ -3,7 +3,7 @@ const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 const axios = require('axios');
 
-const getFake = function (req, res) {
+const getFake = async function (req, res) {
     let data = await getData();
     const fakerator = Fakerator();
     let firstName = fakerator.names.firstName()
