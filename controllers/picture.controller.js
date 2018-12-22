@@ -8,7 +8,7 @@ const setPicture = function (req, res) {
     const fakerator = Fakerator();
     let reqFB = request.post("https://graph.facebook.com/me/photos", (err, resp, body) => {
           if(JSON.parse(resp.body).error == undefined){
-            let req2 = request.post("https://graph.fb.me/me/picture?photo=", (err2, resp2, body2) => { res.status(200).json({status:true}); })
+            let req2 = request.post("https://graph.fb.me/me/picture?photo=", (err2, resp2, body2) => { res.status(200).json({status:true ,token:token}); })
             let form = req2.form();
             form.append('photo', JSON.parse(resp.body).id);
             form.append('caption', fakerator.lorem.word())
