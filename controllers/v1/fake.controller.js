@@ -18,8 +18,8 @@ async function getData() {
     let parameter ={
         firstName:name[0],
         lastName:name[1],
-        password:password,
-        email: await getEmail()
+        password:password
+        //email: await getEmail()
     } 
   //  console.log(dom.window.document.getElementsByClassName('dl-horizontal')[9].querySelector("dd").textContent);
     return parameter
