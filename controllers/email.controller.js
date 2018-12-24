@@ -19,7 +19,7 @@ const getInbox = async function (req, res) {
             code: link.split("c=")[1].split("&")[0]
         }
         return res.status(200).json(parameter);
-    } catch{
+    } catch {
         return res.status(200).json({ status: false });
     }
 }
