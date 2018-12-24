@@ -18,9 +18,9 @@ const getInbox = async function (req, res) {
             link: link,
             code: link.split("c=")[1].split("&")[0]
         }
-        return res.status(200).json(parameter);
-    } catch {
-        return res.status(200).json({ status: false });
+         res.status(200).json(parameter);
+        } catch (error) {
+         res.status(200).json({ status: false });
     }
 }
 module.exports = getInbox;
