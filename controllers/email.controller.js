@@ -8,7 +8,7 @@ const jar = new CookieJar();
 
 const getInbox = async function (req, res) {
     try {
-        let instance = axios.create({ baseURL: 'https://generator.email', withCredentials: true, jar });
+        let instance = axios.create({ baseURL: 'https://emailfake.com', withCredentials: true, jar });
         axiosCookieJarSupport(instance)
         let result = await instance.get('/' + req.params.email, { withCredentials: true, jar });
         const dom = new JSDOM(result.data);
