@@ -16,6 +16,7 @@ const getInbox = async function (req, res) {
         let parameter = {
             status: true,
             link: link,
+            email:req.params.email,
             code: link.split("c=")[1].split("&")[0]
         }
          res.status(200).json(parameter);
