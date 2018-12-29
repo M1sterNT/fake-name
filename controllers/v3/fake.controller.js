@@ -11,7 +11,7 @@ const getFake = async function (req, res) {
     let parameter = {
         firstName:data.firstName,
         lastName:data.lastName,
-        email:fakerator.internet.email(firstName,lastName   ),
+        email:fakerator.internet.email(),
         password:fakerator.internet.password(10),
         ip:fakerator.internet.ip(),
         mac:fakerator.internet.mac(),
