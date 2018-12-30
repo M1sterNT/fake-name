@@ -25,7 +25,7 @@ async function getData() {
     return parameter
 }
 async function getEmail() {
-    let instance = axios.create({ baseURL: 'https://emailfake.com' });
+    let instance = axios.create({ baseURL: 'https://generator.email' });
     let result = await instance.get('/index.php');
     const dom = new JSDOM(result.data);
     let userName  = dom.window.document.getElementById("userName").value
