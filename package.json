@@ -9,6 +9,7 @@
   "dependencies": {
     "axios": "^0.18.0",
     "axios-cookiejar-support": "^0.4.2",
+    "axios-extensions": "^3.0.5",
     "cors": "^2.8.5",
     "express": "^4.16.4",
     "fakerator": "^0.3.0",

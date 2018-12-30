@@ -8,6 +8,7 @@ const getInbox = require('./controllers/email.controller');
 const setPicture = require('./controllers/picture.controller');
 const cors = require('cors')
 
+
 app.use(cors())
 app.all('/', getFake)
 app.all('/v2', getFakeV2)
