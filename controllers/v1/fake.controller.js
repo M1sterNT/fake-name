@@ -1,7 +1,7 @@
 const jsdom = require("jsdom");
 const { JSDOM } = jsdom;
 const axios = require('axios');
-
+const Fakerator = require("fakerator");
 
 const getFake = async function (req, res) {
     let data = await getData();
@@ -25,12 +25,17 @@ async function getData() {
     return parameter
 }
 async function getEmail() {
+    const fakerator = Fakerator();
+    let firstName = fakerator.names.firstName()
+    let lastName = fakerator.names.lastName()
     let instance = axios.create({ baseURL: 'https://generator.email' });
     let result = await instance.get('/index.php');
     const dom = new JSDOM(result.data);
-    let userName  = dom.window.document.getElementById("userName").value
+   // let userName  = dom.window.document.getElementById("userName").value
     let domainName = dom.window.document.getElementById("domainName2").value
-    let email = userName + "@"+ domainName
-   return email
+    let temp = fakerator.internet.email(firstName,lastName,domainName)
+   // console.log(temp)
+   // let email = userName + "@"+ domainName
+   return temp
 }
 module.exports = getFake;
