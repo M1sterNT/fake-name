@@ -11,7 +11,7 @@ const unirest = require('unirest');
 const getInbox = async function (req, res) {
     
         var CookieJar = unirest.jar();
-        unirest.get("https://generator.email/" +req.params.email).jar(CookieJar).end(function (response) {
+        unirest.get("https://emailfake.com/" +req.params.email).jar(CookieJar).end(function (response) {
             try {
             const dom = new JSDOM(response.body);
             let link = dom.window.document.getElementsByClassName("mb_blk")[0].getElementsByTagName("a")[0].href
