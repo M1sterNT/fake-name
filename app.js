@@ -10,6 +10,9 @@ const cors = require('cors')
 
 
 app.use(cors())
+app.use('/images', express.static('images'))
+
+
 app.all('/', getFake)
 app.all('/v2', getFakeV2)
 app.all('/v3', getFakeV3)

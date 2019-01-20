@@ -4,8 +4,8 @@ const axios = require('axios');
 const Fakerator = require("fakerator");
 
 const getFake = async function (req, res) {
+
     let data = await getData();
-  
     res.status(200).json(data);
 }
 

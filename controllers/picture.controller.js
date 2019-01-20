@@ -22,7 +22,19 @@ const setPicture = async function (req, res) {
           }   
     })
     let form = reqFB.form();
-    form.append('image', request(fakerator.internet.avatar()));
+    const testFolder = './../images/picture/';
+    const fs = require('fs');
+    
+    let myData = []; 
+    fs.readdirSync(testFolder).forEach(file => {
+        myData.push(file)
+    })
+    
+    var baseUrl = req.headers.protocol + req.headers.host;
+    let item = myData[Math.floor(Math.random()*myData.length)];
+    let fullUrl = baseUrl+"/images/picture/"+item
+    //form.append('image', request(fakerator.internet.avatar()));
+    form.append('image', request(fullUrl));
     form.append('message',fakerator.lorem.sentence())
     form.append('access_token',token)
 
